@@ -1,0 +1,426 @@
+<!-- 檔名：index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Search Console 驗證標記（請勿刪除） -->
+  <meta name="google-site-verification" content="ElJzpCX4ncFsNkAfSwLpnAl5qkrPhif7yz05_8JQvZs" />
+
+  <!-- 基本 SEO 設定 -->
+  <title>黃花花｜新竹縣社會工作師・助人工作與學習紀錄</title>
+  <meta name="description" content="黃花花的個人網站，目前在新竹縣擔任社會工作師，專注於資源連結與問題解決。這裡記錄了我的助人實務經驗、學習歷程與真實可愛的日常，歡迎未來同學一起來認識我！">
+  <meta name="keywords" content="黃花花, 新竹縣社會工作師, 社會工作, 資源連結, 問題解決, 助人工作">
+  <link rel="canonical" href="https://hanahuang610.github.io/">
+
+  <!-- Open Graph 社群分享標籤 -->
+  <meta property="og:title" content="黃花花｜新竹縣社會工作師・助人工作與學習紀錄">
+  <meta property="og:description" content="黃花花的個人網站，目前在新竹縣擔任社會工作師，專注於資源連結與問題解決。這裡記錄了我的助人實務經驗、學習歷程與真實可愛的日常！">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hanahuang610.github.io/">
+  <meta property="og:image" content="https://hanahuang610.github.io/photo.jpg">
+
+  <!-- Emoji 網站小圖示 (Favicon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- JSON-LD 結構化資料 (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "黃花花",
+    "jobTitle": "社會工作師",
+    "description": "新竹縣社會工作師，專注於社會工作、資源連結與問題解決。",
+    "url": "https://hanahuang610.github.io/",
+    "image": "https://hanahuang610.github.io/photo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "新竹縣",
+      "addressCountry": "TW"
+    },
+    "knowsAbout": ["社會工作", "資源連結", "問題解決", "助人工作"]
+  }
+  </script>
+
+  <!-- Google Fonts: 書卷文青字體 (Noto Serif TC 搭配 Noto Sans TC) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#4A315E',     // 深紫
+              mid: '#7E5A9B',      // 中紫
+              light: '#EFE7F6',    // 淺紫底
+              pink: '#F4ACB7',     // 溫柔粉紅
+              pinkLight: '#FDF2F4',// 淡粉底
+              gold: '#D4AF37',     // 典雅金點綴
+              goldLight: '#FAF5E4',// 淡金底
+              paper: '#FAF7F2',    // 溫暖紙張米色
+              ink: '#2D2436'       // 深紫墨字色
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'serif'],
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 溫暖紙張質感背景 */
+    body {
+      background-color: #FAF7F2;
+      background-image: 
+        radial-gradient(rgba(126, 90, 155, 0.06) 1px, transparent 0),
+        radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      color: #2D2436;
+      overflow-x: hidden;
+    }
+
+    /* 便當格卡片微互動與立體感 */
+    .bento-card {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px -10px rgba(74, 49, 94, 0.14);
+      border-color: rgba(212, 175, 55, 0.65);
+    }
+
+    /* 金色細線點綴 */
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    /* 互動功能 1：捲動淡入動畫 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-base leading-relaxed selection:bg-brand-pink/30 selection:text-brand-deep">
+
+  <!-- 1. 導覽列 -->
+  <header class="sticky top-0 z-40 bg-brand-paper/90 backdrop-blur-md border-b border-brand-gold/30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- 網站名稱 -->
+      <a href="#" class="flex items-center gap-2 font-serif font-bold text-xl text-brand-deep tracking-wide">
+        <span class="text-2xl">🌸</span>
+        <span>黃花花</span>
+        <span class="hidden sm:inline-block text-xs font-sans font-normal px-2.5 py-0.5 rounded-full bg-brand-light text-brand-deep border border-brand-gold/40">社會工作師</span>
+      </a>
+
+      <!-- 電腦版選單 -->
+      <nav class="hidden md:flex items-center gap-8 text-brand-deep font-medium">
+        <a href="#hero" class="hover:text-brand-mid transition-colors">首頁名片</a>
+        <a href="#about" class="hover:text-brand-mid transition-colors">關於花花</a>
+        <a href="#contact" class="px-4 py-1.5 rounded-full bg-brand-deep text-white hover:bg-brand-mid transition-colors shadow-sm">打聲招呼</a>
+      </nav>
+
+      <!-- 手機版漢堡選單按鈕 -->
+      <button id="menu-btn" aria-label="開啟選單" class="md:hidden p-2 rounded-xl text-brand-deep hover:bg-brand-light focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 手機版展開選單 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-paper border-b border-brand-gold/30 px-4 pt-2 pb-4 space-y-2 shadow-lg">
+      <a href="#hero" class="mobile-link block px-4 py-3 rounded-xl text-brand-deep font-medium hover:bg-brand-light">首頁名片</a>
+      <a href="#about" class="mobile-link block px-4 py-3 rounded-xl text-brand-deep font-medium hover:bg-brand-light">關於花花</a>
+      <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl bg-brand-deep text-white font-medium text-center">打聲招呼</a>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12 sm:space-y-16">
+
+    <!-- 2. 開場 (Hero) - 便當格布局 -->
+    <section id="hero" class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
+      
+      <!-- 左側主視覺大格 (佔 7 欄) -->
+      <div class="bento-card md:col-span-7 bg-gradient-to-br from-brand-deep via-[#5B3E73] to-brand-mid text-white rounded-3xl p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-md">
+        <!-- 裝飾背景圖 (淡淡疊加) -->
+        <img 
+          src="hero.jpg" 
+          alt="新竹縣溫柔陽光與書桌風景" 
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/lavenderbook/800/600';"
+          class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay pointer-events-none"
+        >
+        
+        <div class="relative z-10 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-brand-gold/50 text-sm text-brand-goldLight">
+            <span>📍 新竹縣</span>
+            <span>•</span>
+            <span>個人名片 / 學習紀錄 / 實務經驗</span>
+          </div>
+
+          <!-- 全站唯一 H1 -->
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-wide text-white pt-1">
+            黃花花
+          </h1>
+          <p class="text-lg sm:text-xl text-brand-pink font-medium">
+            社會工作師 ｜ 溫柔傾聽與陪伴的助人工作者
+          </p>
+
+          <div class="gold-divider my-4 opacity-60"></div>
+
+          <!-- 主標語 -->
+          <blockquote class="font-serif text-lg sm:text-2xl leading-relaxed text-brand-goldLight/95 italic border-l-4 border-brand-gold pl-4 py-1">
+            「決定你成為什麼樣的人，不是你的能力而是你的選擇。」
+          </blockquote>
+        </div>
+
+        <!-- 三個代表關鍵字 -->
+        <div class="relative z-10 pt-8 flex flex-wrap gap-2.5">
+          <span class="px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-sm font-medium">✨ #社會工作</span>
+          <span class="px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-sm font-medium">🤝 #資源連結</span>
+          <span class="px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-sm font-medium">💡 #問題解決</span>
+        </div>
+      </div>
+
+      <!-- 右側雙格組合 (佔 5 欄) -->
+      <div class="md:col-span-5 flex flex-col gap-5 sm:gap-6">
+        
+        <!-- 右上格：大頭照卡片 (鸚鵡 photo.jpg) -->
+        <div class="bento-card bg-white rounded-3xl p-6 flex flex-col items-center text-center shadow-sm relative">
+          <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-tr from-brand-gold via-brand-pink to-brand-mid shadow-md mb-4">
+            <img 
+              src="photo.jpg" 
+              alt="黃花花的可愛鸚鵡大頭照" 
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://picsum.photos/seed/cute-parrot/400/400';"
+              class="w-full h-full object-cover rounded-full bg-brand-paper"
+            >
+          </div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold font-bold mb-1">HELLO THERE</span>
+          <p class="font-serif text-xl font-bold text-brand-deep">大家好我是花花 XD</p>
+          <p class="text-sm text-brand-ink/75 mt-1">很高興在這裡遇見未來的同學！</p>
+        </div>
+
+        <!-- 右下格：給人的三個印象小卡片 -->
+        <div class="bento-card bg-brand-pinkLight rounded-3xl p-6 flex-1 flex flex-col justify-center shadow-sm">
+          <h2 class="font-serif text-lg font-bold text-brand-deep mb-3 flex items-center gap-2">
+            <span class="text-brand-gold">✦</span> 大家眼中的花花
+          </h2>
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <div class="bg-white/80 rounded-2xl p-3 border border-brand-pink/40">
+              <div class="text-2xl mb-1">💬</div>
+              <div class="font-bold text-brand-deep text-sm sm:text-base">善溝通</div>
+            </div>
+            <div class="bg-white/80 rounded-2xl p-3 border border-brand-pink/40">
+              <div class="text-2xl mb-1">📖</div>
+              <div class="font-bold text-brand-deep text-sm sm:text-base">有內涵</div>
+            </div>
+            <div class="bg-white/80 rounded-2xl p-3 border border-brand-pink/40">
+              <div class="text-2xl mb-1">🌷</div>
+              <div class="font-bold text-brand-deep text-sm sm:text-base">親切</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 區塊間裝飾性圖片橫幅 -->
+    <div class="reveal relative h-32 sm:h-40 rounded-3xl overflow-hidden bento-card shadow-sm">
+      <img 
+        src="banner.jpg" 
+        alt="溫暖柔和的文青書桌與花草意象" 
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://picsum.photos/seed/warm-journal/1200/320';"
+        class="w-full h-full object-cover"
+      >
+      <div class="absolute inset-0 bg-brand-deep/45 backdrop-blur-[1px] flex items-center justify-center px-6 text-center">
+        <p class="font-serif text-white text-base sm:text-xl tracking-wider">
+          「在每一次傾聽與資源連結裡，陪著彼此走過一段溫柔的路。」
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. 區塊一：關於我 (多格便當拼接) -->
+    <section id="about" class="reveal space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-brand-deep text-brand-goldLight flex items-center justify-center font-serif font-bold">01</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-deep">關於我：專業與反差的日常</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
+        
+        <!-- 卡片 A：現在在做什麼 (跨 6 欄) -->
+        <div class="bento-card md:col-span-6 bg-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-deep text-sm font-medium mb-4">
+              <span>🌱 現在的日常</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-deep mb-3">在第一線陪伴的助人工作</h3>
+            <p class="text-brand-ink/85">
+              目前在新竹縣擔任<strong>社會工作師</strong>，每天都在<strong>助人工作</strong>的現場努力著。透過耐心的溝通、資源連結與問題解決，陪伴每個需要支持的對象找到前進的方向。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-light flex items-center gap-2 text-sm text-brand-mid font-medium">
+            <span>📍 服務範圍：新竹縣</span>
+          </div>
+        </div>
+
+        <!-- 卡片 B：配圖 + 轉折小故事 (跨 6 欄) -->
+        <div class="bento-card md:col-span-6 bg-brand-light/70 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-5 items-center">
+          <img 
+            src="about.jpg" 
+            alt="花花的學習與生活側拍" 
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://picsum.photos/seed/cozy-desk/400/500';"
+            class="w-full sm:w-36 h-48 sm:h-full object-cover rounded-2xl border-2 border-white shadow-sm shrink-0"
+          >
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-brand-deep text-sm font-medium mb-3">
+              <span>🧗‍♀️ 一路走來</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-deep mb-2">連滾帶爬的成長路</h3>
+            <p class="text-brand-ink/85">
+              說起怎麼走到現在的，其實就是「<strong>連滾帶爬</strong>」四個字！雖然過程跌跌撞撞、充滿挑戰，但也正因為經歷過這些不容易，讓我更能同理別人的處境。
+            </p>
+          </div>
+        </div>
+
+        <!-- 卡片 C：做事原則 (跨 4 欄) -->
+        <div class="bento-card md:col-span-4 bg-brand-goldLight/60 rounded-3xl p-6">
+          <div class="text-3xl mb-3">✨</div>
+          <h3 class="font-serif text-lg font-bold text-brand-deep mb-2">做事最在乎：完美</h3>
+          <p class="text-brand-ink/85">
+            面對每一項託付與個案需求，我對細節有著「<strong>完美</strong>」的堅持，希望能把資源整合與溝通做到最周全。
+          </p>
+        </div>
+
+        <!-- 卡片 D：工作以外的我 (跨 4 欄) -->
+        <div class="bento-card md:col-span-4 bg-brand-pinkLight rounded-3xl p-6">
+          <div class="text-3xl mb-3">🛋️</div>
+          <h3 class="font-serif text-lg font-bold text-brand-deep mb-2">下班後的反差：超廢</h3>
+          <p class="text-brand-ink/85">
+            脫下社工師的身分，工作以外的我其實「<strong>超廢</strong>」！把所有能量都留給白天了，回家只想徹底放空充電。
+          </p>
+        </div>
+
+        <!-- 卡片 E：小秘密 (跨 4 欄) -->
+        <div class="bento-card md:col-span-4 bg-white rounded-3xl p-6">
+          <div class="text-3xl mb-3">🤫</div>
+          <h3 class="font-serif text-lg font-bold text-brand-deep mb-2">小秘密：超級懶</h3>
+          <p class="text-brand-ink/85">
+            別人可能不知道的小事實——我其實「<strong>超級懶</strong>」（笑），也因為這樣，反而更懂得尋找聰明、有效率的問題解決方法！
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. 區塊二：聯絡與招呼區 (便當滿版卡片) -->
+    <section id="contact" class="reveal">
+      <div class="bento-card bg-gradient-to-r from-brand-light via-brand-pinkLight to-brand-goldLight rounded-3xl p-8 sm:p-10 text-center space-y-5 relative overflow-hidden">
+        <div class="inline-block px-4 py-1 rounded-full bg-white/80 text-brand-deep text-sm font-medium border border-brand-gold/40">
+          💌 Nice to meet you
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-deep">
+          很高興認識未來的同學！
+        </h2>
+        <p class="max-w-xl mx-auto text-brand-ink/85 text-base sm:text-lg">
+          這個小天地記錄了我的社工實務點滴與真實個性。目前先透過這張線上名片跟大家打個招呼，期待之後在課堂與學習路上一起交流、彼此陪伴！
+        </p>
+        <div class="pt-2">
+          <a href="#hero" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-brand-deep text-white font-medium hover:bg-brand-mid transition-all shadow-md">
+            <span>🌸 再看一次花花的名片</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. 頁尾 -->
+  <footer class="border-t border-brand-gold/30 bg-white/60 mt-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-brand-ink/70">
+      <div class="flex items-center gap-2 font-serif text-brand-deep font-bold">
+        <span>🌸 黃花花</span>
+        <span class="font-sans font-normal text-brand-ink/60">｜新竹縣社會工作師</span>
+      </div>
+      <p>© 2026 黃花花．個人名片與學習紀錄</p>
+    </div>
+  </footer>
+
+  <!-- 互動功能 2：回到頂端按鈕 -->
+  <button 
+    id="back-to-top" 
+    aria-label="回到頂端"
+    class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-brand-deep text-brand-goldLight border border-brand-gold/60 shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-mid hover:-translate-y-1 focus:outline-none"
+  >
+    <span class="text-xl font-bold">↑</span>
+  </button>
+
+  <!-- JavaScript 互動控制 -->
+  <script>
+    // 1. 手機版漢堡選單開關
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 2. 互動功能：捲動淡入 (Intersection Observer)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 3. 互動功能：回到頂端按鈕顯示與點擊捲動
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 280) {
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        backToTopBtn.classList.add('opacity-100');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        backToTopBtn.classList.remove('opacity-100');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
