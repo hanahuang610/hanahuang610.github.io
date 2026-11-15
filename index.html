@@ -157,6 +157,7 @@
       <nav class="hidden md:flex items-center gap-5 text-brand-ink font-bold">
         <a href="#hero" class="px-3 py-1.5 rounded-full hover:bg-brand-orangeLight hover:text-brand-orangeDeep transition-colors">首頁名片</a>
         <a href="#about" class="px-3 py-1.5 rounded-full hover:bg-brand-greenLight hover:text-brand-green transition-colors">關於水果糖</a>
+        <a href="#gallery" class="px-3 py-1.5 rounded-full hover:bg-brand-yellowLight hover:text-brand-orangeDeep transition-colors">可愛照片牆</a>
         <a href="#contact" class="px-5 py-2 rounded-full bg-brand-orange text-white hover:bg-brand-orangeDeep transition-all shadow-[0_3px_0_#C24604] active:translate-y-0.5">
           粉絲聚集地 🎉
         </a>
@@ -174,6 +175,7 @@
     <div id="mobile-menu" class="hidden md:hidden bg-brand-paper border-b-2 border-brand-orange/20 px-4 pt-2 pb-4 space-y-2 shadow-lg">
       <a href="#hero" class="mobile-link block px-4 py-3 rounded-2xl text-brand-ink font-bold hover:bg-brand-orangeLight">🍬 首頁名片</a>
       <a href="#about" class="mobile-link block px-4 py-3 rounded-2xl text-brand-ink font-bold hover:bg-brand-greenLight">🦜 關於水果糖</a>
+      <a href="#gallery" class="mobile-link block px-4 py-3 rounded-2xl text-brand-ink font-bold hover:bg-brand-yellowLight">📸 可愛照片牆</a>
       <a href="#contact" class="mobile-link block px-4 py-3 rounded-2xl bg-brand-orange text-white font-bold text-center shadow-[0_3px_0_#C24604]">🎉 粉絲聚集地</a>
     </div>
   </header>
@@ -373,6 +375,94 @@
           </div>
         </div>
 
+      </section>
+
+      <!-- 新增便當格區塊：水果糖 4 張可愛生活照片牆 -->
+      <section id="gallery" class="reveal">
+        <div class="bento-card bento-green bg-white rounded-[2rem] p-6 sm:p-8 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-yellowLight text-brand-orangeDeep text-sm font-black border border-brand-yellow mb-2">
+                <span>📸</span> 鸚鵡星球寫真集
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-black text-brand-ink">水果糖的可愛日常照片牆 🦜</h2>
+            </div>
+            <p class="text-sm font-bold text-brand-ink/70">吃、睡、撒嬌與搗蛋的精彩瞬間！</p>
+          </div>
+
+          <!-- 4 張照片便當格排列（手機 1 欄、平板 2 欄、電腦 4 欄） -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- 照片 1：life1.jpg -->
+            <div class="bento-card bg-brand-orangeLight/50 rounded-2xl p-3 flex flex-col">
+              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-brand-paper border-2 border-white shadow-sm mb-2.5">
+                <img 
+                  src="life1.jpg" 
+                  alt="水果糖窩在手心撒嬌休息的可愛模樣" 
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://picsum.photos/seed/parrot-cuddle/400/500';"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                >
+              </div>
+              <div class="px-1">
+                <span class="text-xs font-black text-brand-orangeDeep">🥰 撒嬌充電中</span>
+                <p class="text-sm font-bold text-brand-ink mt-0.5">窩在手心裡最舒服啦～</p>
+              </div>
+            </div>
+
+            <!-- 照片 2：life2.jpg -->
+            <div class="bento-card bento-yellow bg-brand-yellowLight/70 rounded-2xl p-3 flex flex-col">
+              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-brand-paper border-2 border-white shadow-sm mb-2.5">
+                <img 
+                  src="life2.jpg" 
+                  alt="水果糖單腳抓著黃色小點心大口品嚐" 
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://picsum.photos/seed/parrot-eat/400/500';"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                >
+              </div>
+              <div class="px-1">
+                <span class="text-xs font-black text-brand-orangeDeep">🍿 專業吃貨時間</span>
+                <p class="text-sm font-bold text-brand-ink mt-0.5">單腳抓點心開吃最對味！</p>
+              </div>
+            </div>
+
+            <!-- 照片 3：life3.jpg -->
+            <div class="bento-card bento-green bg-brand-greenLight/60 rounded-2xl p-3 flex flex-col">
+              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-brand-paper border-2 border-white shadow-sm mb-2.5">
+                <img 
+                  src="life3.jpg" 
+                  alt="水果糖歪頭好奇研究白色小圓球" 
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://picsum.photos/seed/parrot-curious/400/500';"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                >
+              </div>
+              <div class="px-1">
+                <span class="text-xs font-black text-brand-green">🥚 好奇寶寶模式</span>
+                <p class="text-sm font-bold text-brand-ink mt-0.5">歪頭研究這顆圓圓是什麼？</p>
+              </div>
+            </div>
+
+            <!-- 照片 4：life4.jpg -->
+            <div class="bento-card bg-brand-orangeLight/50 rounded-2xl p-3 flex flex-col">
+              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-brand-paper border-2 border-white shadow-sm mb-2.5">
+                <img 
+                  src="life4.jpg" 
+                  alt="水果糖在肩膀上專心檢查可愛小公仔" 
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://picsum.photos/seed/parrot-play/400/500';"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                >
+              </div>
+              <div class="px-1">
+                <span class="text-xs font-black text-brand-orangeDeep">🕵️‍♀️ 搗蛋巡邏中</span>
+                <p class="text-sm font-bold text-brand-ink mt-0.5">先用小嘴巴檢查一下新玩具！</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
       <!-- 第四排便當格：底部滿寬粉絲互動大卡片 (12欄) -->
